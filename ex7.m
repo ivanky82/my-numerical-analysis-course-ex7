@@ -1,18 +1,19 @@
 % Tutorial Minggu ke-5
-% MENCARI APROKSIMASI TURUNAN 
-% 
+% MENCARI APROKSIMASI TURUNAN
+%
 % File ini akan memanggil beberapa kode dan anda harus melengkapi kode tersebut
 % untuk mencari hampiran turunan beberapa fungsi
-% 
-% File latihan :    
+%
+% File latihan :
 %     1. myfun.m
 %     2. bedaTengah.m
 %     3. diffTabel.m
-%     
-% Pada latihan ini, anda tidak perlu mengotak-atik code pada file ini 
+%     4. richardson_extrapolation.m
+%
+% Pada latihan ini, anda tidak perlu mengotak-atik code pada file ini
 % anda cukup membuat kode program pada file-file diatas.
-% 
-% 
+%
+%
 %==========================================================================
 % PART 1: MENDEFINISIKAN FUNGSI YANG AKAN DICARI TURUNANNYA
 % Buatlah sebuah fungsi yang diberi nama myfun.m yang isinya adalah fungsi
@@ -22,7 +23,7 @@
 clc;
 clear;
 close all;
-x = [1; 1.5; 1.75; 1.9; 2]; 
+x = [1; 1.5; 1.75; 1.9; 2];
 fprintf('Part 1 : Mendefinisikan fungsi yang akan dicari turunannya \n');
 y = myfun(x)
 fprintf('Kode yang anda kerjakan adalah benar jika outputnya adalah  \n');
@@ -48,7 +49,7 @@ pause;
 % PART 3: MEMBUAT TABEL HAMPIRAN TURUNAN UNTUK BERBAGAI NILAI h
 % Buatlah sebuah fungsi void yang diberi nama diffTabel.m yang akan mencari hampiran
 % turunan suatu fungsi untuk berbagai nilai h
-
+format long
 fprintf('Part 3 : Membuat tabel hampiran turunan untuk berbagai nilai h \n');
 h = [0.5 0.05 0.005 0.0005 0.00005 0.000005 0.0000005 0.00000005 0.000000005 0.0000000005 0.000000000005];
 p = 2;
@@ -58,17 +59,29 @@ fprintf('Kode yang anda kerjakan adalah benar jika terdapat tabel dengan tabel \
 fprintf('yang kolom2nya adalah h, hampiran turunan dan erornya \n');
 fprintf('Program Selesai. Tekan tombol apapun untuk lanjut\n\n');
 pause;
+
+%==========================================================================
+% PART 4: MEMBUAT HAMPIRAN TURUNAN MENGGUNAKAN EXTRAPOLASI RICHARDSON
+% Buatlah sebuah fungsi yang diberi nama richardson_extrapolation yang akan mencari
+% hampiran turunan suatu fungsi dengan menggunakan tabel extrapolasi Richardson.
+h = 1;
+n = 5;
+richardson_tab = richardson_extrapolation(@(x)myfun(x),p,h,n)
+fprintf('Kode yang anda kerjakan adalah benar jika terdapat tabel dengan \n');
+fprintf('yang kolom2nya adalah hampiran turunan dari fungsi yang diminta. \n');
+fprintf('Baris terakhir dari tabel yang dibuat adalah seperti berikut ini: \n');
+fprintf('-1.682760041680056  -1.683023001435725  -1.682943910099490  -1.682941922875468  -1.682941926814347 \n');
+fprintf('Program Selesai. Tekan tombol apapun untuk lanjut\n\n');
+pause;
 close all;
-
-
+format short
 % ==============================AKHIR KODE================================
 % TIDAK MELAKUKAN PENGETIKAN KODE DI BAWAH GARIS INI AGAR LEBIH RAPI DALAM
 % MELAKUKAN KODING DAN LEBIH DIMENGERTI.
 
-% BONUS : 
+% BONUS :
 % 1. COBALAH UNTUK MEMBUAT PROGRAM UNTUK MENCARI HAMPIRAN TURUNAN KEDUA
-% 
+%
 % 2. COBALAH UNTUK MEMBUAT SEBUAH PROGRAM UNTUK MENCARI HAMPIRAN TURUNAN
-%    PERTAMA DENGAN TINGKAT AKURASI YANG LEBIH TINGGI 
-
+%    PERTAMA DENGAN TINGKAT AKURASI YANG LEBIH TINGGI
 
