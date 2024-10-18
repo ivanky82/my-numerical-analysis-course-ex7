@@ -70,7 +70,7 @@ richardson_tab = richardson_extrapolation(@(x)myfun(x),p,h,n)
 fprintf('Kode yang anda kerjakan adalah benar jika terdapat tabel dengan \n');
 fprintf('yang kolom2nya adalah hampiran turunan dari fungsi yang diminta. \n');
 fprintf('Baris terakhir dari tabel yang dibuat adalah seperti berikut ini: \n');
-fprintf('-1.682760041680056  -1.683023001435725  -1.682943910099490  -1.682941922875468  -1.682941926814347 \n');
+fprintf('-1.68276004  -1.68302300  -1.68294391  -1.68294192  -1.6829419268 \n');
 fprintf('Program Selesai. Tekan tombol apapun untuk lanjut\n\n');
 pause;
 close all;
